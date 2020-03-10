@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/Badge.scss';
+import './styles/Badge.scss';
 import confLogo from '../images/badge-header.svg';
 
 function Badge(props) {

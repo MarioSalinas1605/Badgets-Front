@@ -1,9 +1,9 @@
-@import './variables.scss';
+@import '../../styles/variables.scss';
 
 .BadgeNew__hero{
     width: 100%;
     padding: 2rem 0;
-    background: url('../images/stars.svg'), $badgeNew-backgorund-color;
+    background: url('../../images/stars.svg'), $badgeNew-backgorund-color;
     background-repeat: repeat;
     margin-bottom: 1rem;
     color: $navbar-color;

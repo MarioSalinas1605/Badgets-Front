@@ -2,7 +2,7 @@ import React from 'react'
 import Badge from '../components/Badge.jsx'
 import Navbar from '../components/Navbar.jsx'
 import header from '../images/badge-header.svg'
-import '../styles/BadgeNew.scss'
+import './styles/BadgeNew.scss'
 
 function BadgeNew() {
     return (
