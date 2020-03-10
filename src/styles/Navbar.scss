@@ -1,0 +1,23 @@
+@import './variables.scss';
+
+.Navbar{
+    width: 100%;
+    padding: 0.5rem 0;
+    background-color: $navbar-background-color;
+}
+
+.Navbar__brand {
+    color: $navbar-color;
+    display: flex;
+    align-items: center;
+
+
+    &-logo{
+        margin-right: 0.5rem;
+    }
+
+    &:hover{
+        color: $navbar-color;
+        text-decoration: none;
+    }
+}
