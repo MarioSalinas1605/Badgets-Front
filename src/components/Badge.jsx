@@ -3,7 +3,7 @@ import React from 'react';
 import '../styles/Badge.scss';
 import confLogo from '../images/badge-header.svg';
 
-function Badge() {
+function Badge(props) {
   return(
     <div className="Badge">
         <div className="Badge__header">
@@ -13,17 +13,17 @@ function Badge() {
         <div className="Badge__section-name">
           <img
             className="Badge__avatar"
-            src="https://www.gravatar.com/avatar/21594ed15d68ace3965642162f8d2e84?d=identicon"
+            src={props.avatarUrl}
             alt="Avatar"
           />
           <h1>
-            Richard <br /> Kaufman
+            {props.firstName} <br /> {props.lastName}
           </h1>
         </div>
 
         <div className="Badge__section-info">
-          <h3>Frontend Engineer</h3>
-          <div>@sparragus</div>
+          <h3>{props.jobTitle}</h3>
+          <div>{props.twitter}</div>
         </div>
 
         <div className="Badge__footer">#platziconf</div>
