@@ -1,58 +1,51 @@
 import React from 'react'
-import useFormHandler from '../customHooks/useFormHandler'
 
-function BadgeForm() {
-
-    function onSubmitHandler () {
-        console.log(inputs);
-    }
+function BadgeForm(props) {
     
-    const {inputs, handleInputChange, handleSubmit} = useFormHandler(onSubmitHandler)
-
     return (
         <>
             <h1>New attendant</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={props.onSubmit}>
                 <div className="form-group">
                     <label>First Name</label>
                     <input 
                         type="text" 
                         name="firstName"
                         className="form-control"
-                        value={inputs.firstName || ''}
-                        onChange={handleInputChange}
+                        value={props.formValues && props.formValues.firstName ? props.formValues.firstName : ''}
+                        onChange={props.onChange}
                     />
                     <label>Last Name</label>
                     <input
                         type="text"
                         name="lastName"
                         className="form-control"
-                        value={inputs.lastName || ''}
-                        onChange={handleInputChange}
+                        value={props.formValues && props.formValues.lastName ? props.formValues.lastName : ''}
+                        onChange={props.onChange}
                     />
                     <label>Email</label>
                     <input 
                         type="text"
                         name="email"
                         className="form-control"
-                        value={inputs.email || ''}
-                        onChange={handleInputChange}
+                        value={props.formValues && props.formValues.email ? props.formValues.email : ''}
+                        onChange={props.onChange}
                     />
                     <label>Job Title</label>
                     <input
                         type="text"
                         name="jobTitle"
                         className="form-control"
-                        value={inputs.jobTitle || ''}
-                        onChange={handleInputChange}
+                        value={props.formValues && props.formValues.jobTitle ? props.formValues.jobTitle : ''}
+                        onChange={props.onChange}
                     />
                     <label>Twitter</label>
                     <input
                         type="text"
                         name="twitter"
                         className="form-control"
-                        value={inputs.twitter || ''}
-                        onChange={handleInputChange}
+                        value={props.formValues && props.formValues.twitter ? props.formValues.twitter : ''}
+                        onChange={props.onChange}
                     />
                 </div>
 
