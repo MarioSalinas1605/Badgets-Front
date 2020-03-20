@@ -1,6 +1,5 @@
 import React from 'react'
 import Badge from '../components/Badge.jsx'
-import Navbar from '../components/Navbar.jsx'
 import header from '../images/badge-header.svg'
 import BadgeForm from '../components/BadgeForm.jsx'
 import useFormHandler from '../customHooks/useFormHandler'
@@ -16,7 +15,6 @@ function BadgeNew() {
 
     return (
         <>
-            <Navbar />
             <div className="BadgeNew__hero">
                 <img
                     className="img-fluid"
