@@ -2,7 +2,6 @@ import React from 'react'
 import './styles/BadgesListItem.scss'
 
 function BadgesListItem(props) {
-    console.log(props);
     
     return(
         <div className="BadgesListItem">
