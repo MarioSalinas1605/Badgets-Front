@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route, Router } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import BadgeNew from '../pages/BadgeNew.jsx'
 import Badges from '../pages/Badges.jsx'
 import Home from '../pages/Home.jsx'
