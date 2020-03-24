@@ -2,6 +2,7 @@ import React from 'react';
 
 import './styles/Badge.scss';
 import confLogo from '../images/badge-header.svg';
+import Gravar from './Gravatar.jsx'
 
 function Badge(props) {
   return(
@@ -11,11 +12,7 @@ function Badge(props) {
         </div>
 
         <div className="Badge__section-name">
-          <img
-            className="Badge__avatar"
-            src={props.avatarUrl}
-            alt="Avatar"
-          />
+          <Gravar email={props.email} className="Badge__avatar" />
           <h1>
             {props.firstName} <br /> {props.lastName}
           </h1>
