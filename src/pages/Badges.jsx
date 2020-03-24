@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import confLogo from '../images/badge-header.svg'
 import BadgesList from '../components/BadgesList.jsx'
+import PageError from './PageError.jsx'
+import PageLoading from './PageLoading.jsx'
 import './styles/Badges.scss'
 import api from '../api'
 
@@ -31,11 +33,11 @@ function Badges() {
     
     
     if (loading === true) {
-        return 'Loading...';
+        return <PageLoading />
     }
   
     if (error) {
-        return `Error: ${error.message}`;
+        return <PageError error={error} />
     }
     
     return(
