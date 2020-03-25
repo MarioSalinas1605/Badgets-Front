@@ -3,10 +3,11 @@ import Badge from '../components/Badge.jsx'
 import header from '../images/platziconf-logo.svg'
 import BadgeForm from '../components/BadgeForm.jsx'
 import useFormHandler from '../customHooks/useFormHandler'
+import PageLoading from './PageLoading.jsx'
 import './styles/BadgeNew.scss'
 import api from '../api'
 
-function BadgeNew() {
+function BadgeNew(props) {
 
     const {inputs, handleInputChange, handleSubmit} = useFormHandler(onSubmitHandler)
     
@@ -18,13 +19,24 @@ function BadgeNew() {
         setLoading(true)
         setError(null)
         try {
-            await api.badges.create(inputs)
-            setLoading(false)
+            try {
+                await api.badges.create(inputs)
+                setLoading(false)
+                props.history.push('/badges')
+            } catch (error) {
+                setLoading(false)
+                setError(error)
+            }
+            
         } catch (error) {
             setLoading(error)
             setError(error)
         }
         
+    }
+
+    if (loading) {
+        return <PageLoading />
     }
 
     return (
@@ -53,6 +65,7 @@ function BadgeNew() {
                             onChange={ handleInputChange }
                             formValues={ inputs }
                             onSubmit={ handleSubmit }
+                            error={ error }
                         />
                     </div>
                 </div>

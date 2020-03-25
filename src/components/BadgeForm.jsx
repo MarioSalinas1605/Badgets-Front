@@ -52,6 +52,10 @@ function BadgeForm(props) {
                 <button className="btn btn-primary">
                         Save
                 </button>
+
+                {props.error && (
+                    <p className="text-danger">{props.error.message}</p>
+                )}
             </form>
         </>
     )

@@ -25,6 +25,8 @@ const api = {
         return callApi('/badges');
       },
       create(badge) {
+        // Line to simulate error of server
+        // throw new Error('500: Server error');
         return callApi(`/badges`, {
           method: 'POST',
           body: JSON.stringify(badge),
