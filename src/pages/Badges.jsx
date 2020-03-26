@@ -4,6 +4,7 @@ import confLogo from '../images/badge-header.svg'
 import BadgesList from '../components/BadgesList.jsx'
 import PageError from './PageError.jsx'
 import PageLoading from './PageLoading.jsx'
+import MiniLoader from '../components/MiniLoader.jsx'
 import './styles/Badges.scss'
 import api from '../api'
 
@@ -28,11 +29,16 @@ function Badges() {
 
     useEffect(()=>{
         fetchData()
+        const intervalId = setInterval(fetchData, 5000 )
+
+        return function cleanUp() {
+            clearInterval(intervalId)
+        }
     }, []);
 
     
     
-    if (loading === true) {
+    if (loading === true && !data) {
         return <PageLoading />
     }
   
@@ -62,6 +68,8 @@ function Badges() {
                 </div>
 
                 <BadgesList badges={data}/>
+
+                { loading && <MiniLoader /> }
             </div>
         </>
     )
