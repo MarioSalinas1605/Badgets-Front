@@ -4,7 +4,6 @@ function BadgeForm(props) {
     
     return (
         <>
-            <h1>New attendant</h1>
             <form onSubmit={props.onSubmit}>
                 <div className="form-group">
                     <label>First Name</label>

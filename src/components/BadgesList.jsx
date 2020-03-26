@@ -23,7 +23,12 @@ function BadgesList(props) {
                     props.badges.map(badge=>{
                         return(
                             <li key={badge.id}>
-                                <BadgesListItem badge={badge}/>
+                                <Link
+                                    to={`/badges/${badge.id}/edit`}
+                                    className="text-reset text-decoration-none"
+                                >
+                                    <BadgesListItem badge={badge}/>
+                                </Link>
                             </li>
                         )
                     })

@@ -19,17 +19,11 @@ function BadgeNew(props) {
         setLoading(true)
         setError(null)
         try {
-            try {
-                await api.badges.create(inputs)
-                setLoading(false)
-                props.history.push('/badges')
-            } catch (error) {
-                setLoading(false)
-                setError(error)
-            }
-            
+            await api.badges.create(inputs)
+            setLoading(false)
+            props.history.push('/badges')
         } catch (error) {
-            setLoading(error)
+            setLoading(false)
             setError(error)
         }
         
@@ -61,6 +55,7 @@ function BadgeNew(props) {
                         />
                     </div>
                     <div className="col-6">
+                    <h1>New attendant</h1>
                         <BadgeForm
                             onChange={ handleInputChange }
                             formValues={ inputs }

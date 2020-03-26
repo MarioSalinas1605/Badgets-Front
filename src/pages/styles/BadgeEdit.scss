@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.BadgeEdit__hero {
+    width: 100%;
+    padding: 2rem 0;
+    background: url('../../images/stars.svg'), $badgeNew-backgorund-color;
+    background-repeat: repeat;
+    margin-bottom: 1rem;
+    color: $navbar-color;
+
+    display: flex;
+    justify-content: center;
+}
+
+.BadgeEdit__hero-image {
+    max-height: 100px;
+}
