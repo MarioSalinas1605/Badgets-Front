@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react'
 import PageLoading from './PageLoading.jsx'
 import Badge from '../components/Badge.jsx'
 import api from '../api'
-import header from '../images/platziconf-logo.svg'
 import BadgeForm from '../components/BadgeForm.jsx'
-import './styles/BadgeEdit.scss'
+import Header from '../components/Header.jsx'
 
 function BadgeEdit (props) {
 
@@ -57,14 +56,7 @@ function BadgeEdit (props) {
 
     return (
         <>
-            <div className="BadgeEdit__hero">
-                <img 
-                    className="img-fluid BadgeEdit__hero-image"
-                    src={header} 
-                    alt="Logo"
-                />
-            </div>
-
+            <Header />
             <div className="container">
                 <div className="row">
                     <div className="col-6">

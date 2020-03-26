@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import Badge from '../components/Badge.jsx'
-import header from '../images/platziconf-logo.svg'
 import BadgeForm from '../components/BadgeForm.jsx'
 import useFormHandler from '../customHooks/useFormHandler'
 import PageLoading from './PageLoading.jsx'
-import './styles/BadgeNew.scss'
+import Header from '../components/Header.jsx'
 import api from '../api'
 
 function BadgeNew(props) {
@@ -35,13 +34,7 @@ function BadgeNew(props) {
 
     return (
         <>
-            <div className="BadgeNew__hero">
-                <img 
-                    className="BadgeNew__hero-image img-fluid"
-                    src={header} 
-                    alt="Logo"
-                />
-            </div>
+            <Header />
             <div className="container">
                 <div className="row">
                     <div className="col-6">
