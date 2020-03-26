@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+
+.BadgesDetails__hero {
+    width: 100%;
+    padding: 2rem 0;
+    background: url('../../images/stars.svg'), $badgeNew-backgorund-color;
+    background-repeat: repeat;
+    margin-bottom: 1rem;
+    color: $navbar-color;
+}
+
+.BadgesDetails__hero-attendant-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.BadgeDetails__buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
