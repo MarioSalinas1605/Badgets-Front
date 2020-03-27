@@ -4,20 +4,16 @@ import PageLoading from './PageLoading'
 import PageError from './PageError'
 import confLogo from '../images/platziconf-logo.svg'
 import Badge from '../components/Badge'
+import DeleteBadgeModal from '../components/DeleteBadgeModal'
 import { Link } from 'react-router-dom'
 import './styles/BadgesDetails.scss'
 
 function BadgeDetails(props) {
 
-    const [ badge, setBadge ] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        twitter: '',
-        jobTitle: ''
-    })
+    const [ badge, setBadge ] = useState({ firstName: '', lastName: '', email: '', twitter: '', jobTitle: ''})
     const [ error, setError ] = useState(null)
     const [ loading, setLoading ] = useState(false)
+    const [ isOpen, setIsOpen ] = useState(false)
 
     async function fetchData () {
         setError(null)
@@ -42,6 +38,28 @@ function BadgeDetails(props) {
 
     if (error) {
         return <PageError />
+    }
+
+    function onOpenModal(e) {
+        setIsOpen(true)
+    }
+
+    function onCloseModal(e) {
+        setIsOpen(false)
+    }
+
+    async function onDeleteBadge(e) {
+        setLoading(true)
+        setError(null)
+
+        try {
+            await api.badges.remove(props.match.params.badgeId)
+            setLoading(false)
+            props.history.push('/badges')
+        } catch (error) {
+            setLoading(false)
+            setError(error)
+        }
     }
 
     return (
@@ -81,7 +99,12 @@ function BadgeDetails(props) {
                             </Link>
                         </div>
                         <div>
-                            <button className="btn btn-danger">Delete</button>
+                            <button onClick={onOpenModal} className="btn btn-danger">Delete</button>
+                            <DeleteBadgeModal
+                                isOpen={isOpen}
+                                onClose={onCloseModal}
+                                onDeleteBadge={onDeleteBadge}
+                            />
                         </div>
                     </div>
                 </div>
